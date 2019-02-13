@@ -92,7 +92,14 @@ var configFn = (env, argv) => {
         ]
     };
 
-    if (!development) {
+    if (development) {
+        // Enable debug in development mode
+        config.plugins.push(
+            new webpack.LoaderOptionsPlugin({
+                debug: true
+            })
+        );
+    } else {
         config.plugins.push(
             new CompressionPlugin({
                 asset: '[path].gz[query]',
