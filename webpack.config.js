@@ -6,9 +6,13 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CompressionPlugin = require("compression-webpack-plugin")
 
+const modeDev = 'development';
+
 var configFn = (env, argv) => {
 
-    const mode = argv ? argv.mode : 'development';
+
+    const mode = argv ? argv.mode : modeDev;
+    const development = mode ===  modeDev;
 
     console.log('Build mode: [' + mode + ']');
 
@@ -19,7 +23,7 @@ var configFn = (env, argv) => {
             compress: false,
             port: 8090
         },
-        devtool: argv.mode === 'development' ? 'eval-source-map' : undefined,
+        devtool: development ? 'eval-source-map' : undefined,
         entry: {
             // To output only TypeScript as module see https://github.com/webpack/webpack/issues/4002
             lib: './src/scripts/lib.js',
@@ -88,7 +92,7 @@ var configFn = (env, argv) => {
         ]
     };
 
-    if (mode !== 'development') {
+    if (!development) {
         config.plugins.push(
             new CompressionPlugin({
                 asset: '[path].gz[query]',
