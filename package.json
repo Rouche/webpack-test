@@ -1,0 +1,38 @@
+{
+  "name": "webpack-test",
+  "version": "1.0.0",
+  "description": "Webpack Tests",
+  "main": "webpack.config.js",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^8.6.5",
+    "clean-webpack-plugin": "^0.1.19",
+    "compression-webpack-plugin": "^1.1.12",
+    "css-loader": "^1.0.1",
+    "cssnano": "^4.1.9",
+    "mini-css-extract-plugin": "^0.4.5",
+    "moment": "^2.24.0",
+    "node-sass": "^4.11.0",
+    "postcss-loader": "^2.1.5",
+    "sass-loader": "^7.1.0",
+    "script-loader": "^0.7.2",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.21.0",
+    "ts-loader": "^4.5.0",
+    "typescript": "^3.3.3",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-md5-hash": "0.0.6"
+  },
+  "scripts": {
+    "prod": "webpack --env.cdn=http://localhost:8090/ --config webpack.config.js --mode production",
+    "start": "webpack-dev-server --env.cdn=http://localhost:8090/ --env.WEBPACK_DEV_SERVER=true --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Jean-Francois Larouche",
+  "license": ""
+}

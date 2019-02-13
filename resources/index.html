@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>title</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+    <meta name="robots" content="index,nofollow" />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <script src="/app.js"></script>
+    <script src="/lib.js"></script>
+    <script src="/typescript.js"></script>
+
+    <script>
+        var $typescript = TypeScript.typescript.Library.getInstance();
+        $typescript.setCurrentDate('2018-01-01');
+        console.log($typescript.getCurrentDate().toString());
+    </script>
+
+</head>
+
+<body>
+
+    <div>
+        <button onclick="execute(event);">Test</button>
+    </div>
+
+</body>
+
+<script>
+    function execute() {
+        message();
+    }
+</script>
+
+</html>
