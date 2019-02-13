@@ -93,7 +93,7 @@ var configFn = (env, argv) => {
     };
 
     if (development) {
-        // Enable debug in development mode
+        // Enable debug in development mode (to see source code in Browser devtools)
         config.plugins.push(
             new webpack.LoaderOptionsPlugin({
                 debug: true
